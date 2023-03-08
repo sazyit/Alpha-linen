@@ -2,7 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-const cookieParser = require("cookie-Parser");
+const cookieParser = require("cookie-parser");
 const session = require("express-session");
 var path = require("path");
 

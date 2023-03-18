@@ -14,7 +14,17 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(session({ secret: "musuprefdjd", saveUninitialized: true, resave: false  }));
+app.use(
+  session({
+    secret: "musuprefdjd",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      // Session expires after 1 min of inactivity.
+      expires: 300000,
+    },
+  })
+);
 
 //Static Files
 app.use(express.static(path.join(__dirname, "/public")));
